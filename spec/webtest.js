@@ -1,6 +1,6 @@
 
 describe("Web Page Homework", () => {
-  const MY_HTML_FILE = "index.html";
+  const MY_HTML_FILE = "mypage.html";
   var mTable;
   var page, pageStr;
   var cssURL, MyCSSRules;
@@ -159,7 +159,7 @@ describe("Web Page Homework", () => {
     it("has <title>", () => {
       const el = page.querySelector("html > head > title");
       if (!el)
-      fail();
+        fail();
       else {
         expect(el).toExist();
         expect(el.childNodes.length).toBeGreaterThan(0);
@@ -185,9 +185,11 @@ describe("Web Page Homework", () => {
     })
   })
   
-  it('shall use no inline styles', () => {
+  it('shall use neither inline nor internal styles', () => {
     const elems = page.querySelectorAll("[style]");
+    const style = page.querySelector("head style");
     expect(elems).not.toExist();
+    expect(style).not.toExist();
   })
   
   it("has <heading>", () => {
@@ -465,10 +467,10 @@ describe("Web Page Homework", () => {
     expect(out).toBeTruthy();
   })
   
-  it("'courseTable' uses nth-child pseudo class", () => {
+  it("'courseTable' uses nth-child pseudo class to center text", () => {
     const selectors = findSelectorWithPropAndValue("text-align", "center");
     expect(selectors.length).toBeGreaterThan(0);
-    const columns = page.querySelectorAll("#courseTable");
+    const columns = page.querySelectorAll("#courseTable td");
     const out = matchElementsWithStyles(columns, selectors);
     expect(out).toBeTruthy();
 
@@ -480,4 +482,21 @@ describe("Web Page Homework", () => {
     }
     fail();
   })
+
+  it("'courseTable' uses nth-child pseudo class to alternate background", () => {
+    const selectors = findSelectorWithPropAndValue("background");
+    expect(selectors.length).toBeGreaterThan(0);
+    const columns = page.querySelectorAll("#courseTable tr");
+    const out = matchElementsWithStyles(columns, selectors);
+    expect(out).toBeTruthy();
+
+    // Confirm that pseudo-element :nth-child is used
+    for (k = 0; k < selectors.length; k++) {
+      const sel = selectors[k];
+      if (sel.selectorText.indexOf("nth-child") != -1)
+        return;    
+    }
+    fail();
+  })
+
 })
