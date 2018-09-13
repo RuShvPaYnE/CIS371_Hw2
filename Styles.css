@@ -5,3 +5,56 @@ img {
 #mainTable{
     width:80%;
 }
+#mainTable p{
+    font-size: small;
+}
+#gary{
+    width: 200px;
+    height:200px;
+    margin-bottom: 5px;
+}
+#courseTable{
+    border: 1px solid purple;
+}
+#courseTable tr td:nth-child(1),#courseTable tr td:nth-child(3) {
+    text-align: center;
+}
+#courseTable tr:nth-child(even){
+    background: chartreuse;
+}
+#courseTable tr:nth-child(odd){
+    background: purple;
+}
+
+td{
+    border: 1px solid gray;
+}
+tr{
+    border: 1px solid red;
+}
+
+.one{
+border: 1px solid orangered;
+}
+.two{
+    border: 1px solid orangered;
+}
+.three{
+    border: 1px solid orangered;
+}
+.four{
+    border: 1px solid orangered;
+}
+.five{
+    border: 1px solid orangered;
+}
+.six{
+    border: 1px solid orangered;
+}
+
+ol{
+    list-style-type:lower-alpha; 
+}
+.best{
+    font-style: italic;
+}
