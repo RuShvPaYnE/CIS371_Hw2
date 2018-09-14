@@ -1,20 +1,28 @@
 img {
     float: right;
 }
+body{
+    width: 70%; margin: 0 auto;
+}
 
 #mainTable{
     width:80%;
 }
 #mainTable p{
     font-size: small;
+    clear: both;
+    width: 60%;
+    margin: 0 auto;
 }
 #gary{
     width: 200px;
-    height:200px;
-    margin-bottom: 5px;
+    margin: 0 auto;
+    display: block;
+    float: none;
 }
 #courseTable{
     border: 1px solid purple;
+    
 }
 #courseTable tr td:nth-child(1),#courseTable tr td:nth-child(3) {
     text-align: center;
@@ -26,30 +34,24 @@ img {
     background: purple;
 }
 
-td{
-    border: 1px solid gray;
-}
-tr{
-    border: 1px solid red;
-}
 
 .one{
-border: 1px solid orangered;
+border: 1px solid white;
 }
 .two{
-    border: 1px solid orangered;
+    border: 1px solid white;
 }
 .three{
-    border: 1px solid orangered;
+    border: 1px solid white;
 }
 .four{
-    border: 1px solid orangered;
+    border: 1px solid white;
 }
 .five{
-    border: 1px solid orangered;
+    border: 1px solid white;
 }
 .six{
-    border: 1px solid orangered;
+    border: 1px solid white;
 }
 
 ol{
